@@ -25,5 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
     font-weight: 500;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+input, textarea{
+  @apply border-2 border-gray-300 rounded-md px-1 w-full mb-2;
+}
+input:focus, textarea:focus{
+  @apply border-blue-900
+}
+h1{
+  @apply text-blue-900 mb-2 text-xl;
+}
+label{
+  @apply text-blue-900
+}
+.btn-primary{
+  @apply bg-blue-900 text-white px-4 rounded-md py-1
 }
