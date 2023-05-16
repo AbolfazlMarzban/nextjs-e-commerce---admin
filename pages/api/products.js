@@ -11,4 +11,7 @@ export default async function handler(req, res){
         })
         res.json(productDoc)
     }
+    if(method === "GET"){
+        res.json(await Product.find())
+    }
 }
