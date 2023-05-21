@@ -12,6 +12,10 @@ export default async function handler(req, res){
         res.json(productDoc)
     }
     if(method === "GET"){
-        res.json(await Product.find())
+        if(req.query?.id){
+            res.json(await Product.findOne({_id:req.query.id}))
+        } else {
+            res.json(await Product.find())
+        }
     }
 }
