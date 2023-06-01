@@ -22,8 +22,8 @@ export default function ProductForm ({
         } else {
             //create
         await axios.post('/api/products', data)
-        setGoToProducts(true)
         }
+        setGoToProducts(true)
     }
     if(goToProducts){
      router.push("/products")
