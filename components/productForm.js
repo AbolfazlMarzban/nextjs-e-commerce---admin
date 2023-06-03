@@ -6,7 +6,8 @@ export default function ProductForm ({
     _id,
     title:existingTitle,
     description: existingDescription,
-    price: existingPrice
+    price: existingPrice,
+    images,
 }){
     const router = useRouter()
     const [title, setTitle] = useState( existingTitle ||'')
@@ -33,6 +34,12 @@ export default function ProductForm ({
             <label>Product name</label>
            <input type="text" placeholder="product name" 
            value={title} onChange={ev => setTitle(ev.target.value)}></input>
+           <label>Photos</label>
+           <div>
+            {!images?.length && (
+                <div>No Photos in this Product</div>
+            )}
+           </div>
            <label>description</label>
             <textarea placeholder="description" 
             value={description} onChange={ev => setDescription(ev.target.value)}></textarea>
