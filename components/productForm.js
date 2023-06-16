@@ -26,19 +26,19 @@ export default function ProductForm({
     }
     setGoToProducts(true);
   }
-  async function uploadImages(ev) {
-    const files = ev.target?.files;
-    if (files?.length > 0) {
-      const data = new FormData();
-      for (const file of files) {
-        data.append("file", file);
-      }
-      const response = await axios.post("/api/upload", data, {
-        headers: { "Content-Type": "multipart/formdata" },
-      });
-      console.log(response);
-    }
-  }
+  // async function uploadImages(ev) {
+  //   const files = ev.target?.files;
+  //   if (files?.length > 0) {
+  //     const data = new FormData();
+  //     for (const file of files) {
+  //       data.append("file", file);
+  //     }
+  //     const response = await axios.post("/api/upload", data, {
+  //       headers: { "Content-Type": "multipart/formdata" },
+  //     });
+  //     console.log(response);
+  //   }
+  // }
   if (goToProducts) {
     router.push("/products");
   }
@@ -69,7 +69,7 @@ export default function ProductForm({
             />
           </svg>
           <div>Upload</div>
-          <input type="file" className="hidden" onChange={uploadImages} />
+          <input type="file" className="hidden" />
         </label>
         {!images?.length && <div>No Photos in this Product</div>}
       </div>
