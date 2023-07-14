@@ -7,7 +7,7 @@ export default function ProductForm({
   title: existingTitle,
   description: existingDescription,
   price: existingPrice,
-  images,
+  images, 
 }) {
   const router = useRouter();
   const [title, setTitle] = useState(existingTitle || "");
